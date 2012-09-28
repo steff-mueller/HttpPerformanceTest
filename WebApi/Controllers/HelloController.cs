@@ -7,12 +7,17 @@ using System.Web.Http;
 
 namespace HttpPerformanceTest.Controllers
 {
+    public class HelloResponse
+    {
+        public string Message { get; set; }
+    }
+
     public class HelloController : ApiController
     {
         // GET api/hello
-        public string Get()
+        public HelloResponse Get()
         {
-            return "Hello World!";
+            return new HelloResponse() { Message = "Hello World!" };
         }
     }
 }

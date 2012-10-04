@@ -5,7 +5,7 @@ set terminal png
 set output "benchmark_result.png"
 
 # graph title
-set title "ab -n 1000 -c 100"
+set title "-n 100000 -c 100"
 
 # nicer aspect ratio for image size
 set size 1,0.7

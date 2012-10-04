@@ -2,10 +2,10 @@
 set terminal png
 
 # save file to "out.png"
-set output "webapi.png"
+set output "benchmark_result.png"
 
 # graph title
-set title "ab -n 100 -c 10"
+set title "ab -n 1000 -c 100"
 
 # nicer aspect ratio for image size
 set size 1,0.7
@@ -21,4 +21,5 @@ set ylabel "response time (ms)"
 
 # plot data from "webapi.dat" using column 9 with smooth sbezier lines
 # and title of "asp.net Web API" for the given data
-plot "webapi.dat" using 9 smooth sbezier with lines title "asp.net Web API"
+plot "webapi.dat" using 9 smooth sbezier with lines title "asp.net Web API", \
+	 "servicestack.dat" using 9 smooth sbezier with lines title "ServiceStack"

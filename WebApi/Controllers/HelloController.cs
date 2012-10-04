@@ -9,7 +9,7 @@ namespace HttpPerformanceTest.Controllers
 {
     public class HelloResponse
     {
-        public string Message { get; set; }
+        public Customer Customer { get; set; }
     }
 
     public class HelloController : ApiController
@@ -17,7 +17,10 @@ namespace HttpPerformanceTest.Controllers
         // GET api/hello
         public HelloResponse Get()
         {
-            return new HelloResponse() { Message = "Hello World!" };
+            return new HelloResponse()
+            {
+                Customer = Customer.Create()
+            };
         }
     }
 }

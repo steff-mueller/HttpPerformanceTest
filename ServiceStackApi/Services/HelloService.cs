@@ -12,14 +12,17 @@ namespace ServiceStackApi.Services
 
     public class HelloResponse
     {
-        public string Message { get; set; }
+        public Customer Customer { get; set; }
     }
 
     public class HelloService : Service
     {
         public object Get(Hello req)
         {
-            return new HelloResponse() { Message = "Hello World!" };
+            return new HelloResponse()
+            {
+                Customer = Customer.Create()
+            };
         }
     }
 }
